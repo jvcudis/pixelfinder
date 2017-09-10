@@ -1,5 +1,5 @@
-const {remote} = require('electron')
-const {mainWindow} = remote.require('./main.js')
+const { remote } = require('electron')
+const { mainWindow } = remote.require('./main.js')
 const dialog = remote.dialog
 
 function browseImage () {
@@ -17,14 +17,21 @@ function browseImage () {
     const imageContainer = document.getElementById('imageContainer')
     imageContainer.append(image)
 
+    // Set the image size text
+
     // Auto adjust main window according to size
-    console.log(imageContainer.naturalHeight)
-    console.log(imageContainer.naturalWidth)
+    // Adjust image to fit in the screen
+    console.log(imageContainer)
   })
 }
 
 document.getElementById('browseImage').addEventListener('click', function () {
   browseImage()
+})
+
+document.getElementById('imageContainer').addEventListener('click', function(event) {
+  const pixelPos = document.getElementById('pixelPos')
+  pixelPos.textContent = 'X: ' + event.x + ' Y: ' + event.y
 })
 
 // NOTE: All console.log for this file is displayed on the console window.
