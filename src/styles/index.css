@@ -1,6 +1,7 @@
 html, body {
   padding: 0;
   margin: 0;
+  display: block;
 }
 
 .buttonContainer {
@@ -9,4 +10,10 @@ html, body {
 
 button {
 
+}
+
+#imageContainer > img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
